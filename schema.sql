@@ -18,6 +18,6 @@ VALUES ("Abosute_vodka","liquor", 27.99, 4);
 	   ("Jack_daniels","liquor", 28.99, 4); 
 	   ("Ciroc","liquor", 37.99, 5); 
 	   ("Black_label","liquor", 39.99, 6); 
-	   ("Grey_goose","liquor", 27.99, 2); 
-	   ("Crown_royal","liquor", 27.99, 3); 
+	   ("Grey_goose","liquor", 34.99, 2); 
+	   ("Crown_royal","liquor", 31.99, 3); 
 	   ("Jose_cuervo","liquor", 27.99, 5); 

@@ -31,7 +31,117 @@ connection.connect(function(err) {
  };
 });
 
+function vodka(){
+  inquirer.prompt([
+  	{ 
+  	 name:"liquor",
+  	 type: "input",
+  	 message: "How many units would you like to buy?"
+  	}
+
+  ])
+};
+
 function hennesy(){
+  inquirer.prompt([
+  	{ 
+  	 name:"liquor",
+  	 type: "input",
+  	 message: "How many units would you like to buy?"
+  	}
+
+  ])
+};
+
+function bacardi(){
+  inquirer.prompt([
+  	{ 
+  	 name:"liquor",
+  	 type: "input",
+  	 message: "How many units would you like to buy?"
+  	}
+
+  ])
+};
+
+function baileys(){
+  inquirer.prompt([
+  	{ 
+  	 name:"liquor",
+  	 type: "input",
+  	 message: "How many units would you like to buy?"
+  	}
+
+  ])
+};
+
+function tanqueray(){
+  inquirer.prompt([
+  	{ 
+  	 name:"liquor",
+  	 type: "input",
+  	 message: "How many units would you like to buy?"
+  	}
+
+  ])
+};
+
+function jackDaniel(){
+  inquirer.prompt([
+  	{ 
+  	 name:"liquor",
+  	 type: "input",
+  	 message: "How many units would you like to buy?"
+  	}
+
+  ])
+};
+
+function ciroc(){
+  inquirer.prompt([
+  	{ 
+  	 name:"liquor",
+  	 type: "input",
+  	 message: "How many units would you like to buy?"
+  	}
+
+  ])
+};
+
+function blackLabel(){
+  inquirer.prompt([
+  	{ 
+  	 name:"liquor",
+  	 type: "input",
+  	 message: "How many units would you like to buy?"
+  	}
+
+  ])
+};
+
+function greyGoose(){
+  inquirer.prompt([
+  	{ 
+  	 name:"liquor",
+  	 type: "input",
+  	 message: "How many units would you like to buy?"
+  	}
+
+  ])
+};
+
+function crownRoyal(){
+  inquirer.prompt([
+  	{ 
+  	 name:"liquor",
+  	 type: "input",
+  	 message: "How many units would you like to buy?"
+  	}
+
+  ])
+};
+
+function joseCuervo(){
   inquirer.prompt([
   	{ 
   	 name:"liquor",
