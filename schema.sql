@@ -5,11 +5,11 @@ USE bamazonDB;
 
 
 CREATE TABLE products(
-	id INT(10) AUTO_INCREMENT NOT NULL,
-	product_name VARCHAR(40),
-	department_name VARCHAR(40),
-	price DECIMAL(40,3),
-	stock INTEGER(10),
+	id INT NOT NULL AUTO_INCREMENT,
+	product_name VARCHAR(40) NULL,
+	department_name VARCHAR(40) NULL,
+	price DECIMAL(40,2) NULL,
+	stock INT NULL,
 	PRIMARY KEY(id)
 );
 
