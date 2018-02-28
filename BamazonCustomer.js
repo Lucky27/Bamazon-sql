@@ -21,23 +21,23 @@ connection.connect(function(err) {
 });
 
 function start(){
-	connection.query("SELECT id, product_name, department_name, price, stock_quantity FROM products", function(err, res){
+	connection.query("SELECT id, product_name, department_name, price, stock FROM products", function(err, res){
         if (err) throw err;
 
         var table = new Table({
           items: ['Item ID', 'Product name', 'Department', 'Price', 'Quantity'],
-          width: [10, 30, 30, 30, 30]
+          width: [30, 30, 30, 30, 30]
         });
             // loop for items in the table.
             for(var i = 0; i < res.length; i++){
                 table.push(
-                [res[i].id, res[i].product_name, res[i].department_name, res[i].price, res[i].stock_quantity]
+                [res[i].id, res[i].product_name, res[i].department_name, res[i].price, res[i].stock]
   
               );
             }
 
             console.log(table.toString());
-            buy();
+            // buy();
       });
 }
 
