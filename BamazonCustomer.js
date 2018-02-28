@@ -37,88 +37,88 @@ function start(){
             }
 
             console.log(table.toString());
-            // buy();
+            buy();
       });
 }
 
 
 
-// function buy(){
-// 	inquirer.prompt([
-//   {
-// 	name: "buy",
-// 	type: "list",
-// 	message: "What is the ID you like to purchase?",
-// 	// choices: ["HENNESY","BAILEYS"]
-//   }
-//   ]).then(function(answer){
-// 	var purchaseItems = answer.buy;
+function buy(){
+	inquirer.prompt([
+  {
+	name: "buy",
+	type: "input",
+	message: "What is the ID you like to purchase?",
+	// choices: ["HENNESY","BAILEYS"]
+  }
+  ]).then(function(answer){
+	var purchaseItems = answer.buy;
 
-//     connection.query('SELECT * FROM Products WHERE id=?', purchaseItems, function(err, res){
-//        if(err)
-//        	console.log(err);
-//        	console.log(res);
+    connection.query('SELECT * FROM Products WHERE id=?', purchaseItems, function(err, res){
+       if(err)
+       	console.log(err);
+       	console.log(res);
 
-//        		inquirer.prompt([
-//        		 {
-//        		 	name: "quantity",
-//        		 	type: "input",
-//        		 	message: "How many would you like to purchase?"
+       		inquirer.prompt([
+       		 {
+       		 	name: "quantity",
+       		 	type: "input",
+       		 	message: "How many would you like to purchase?"
 
-//        		 }
-//        		 ]).then(function(answer){
-//        		 	var quantity = answer.quantity;
+       		 }
+       		 ]).then(function(answer){
+       		 	var quantity = answer.quantity;
 
-//        		 	if (quantity > res[0].stock_quantity){
-//        		 		console.log("No stock.");
-//        		 		buy();
-//        		 	}
-//        		 	else{
-//        		 		console.log("Thank you for your business. Total: " + quantity * res[0].price);
+       		 	if (quantity > res[0].stock){
+       		 		console.log("No stock.");
+       		 		buy();
+       		 	}
+       		 	else{
+       		 		console.log("Thank you for your business. Total: " + quantity * res[0].price);
 
-//        		 		var newQuantity = res[0].stock_quantity - quantity;
-//        		 		connection.query("UPDATE products SET stock_quantity = " + newQuantity + "WHERE id = " + purchaseItems, function(err, res){
-//        		 			if (err) throw err;
-//        		 			console.log("Drink responsibly.", err);
-//        		 		})
+       		 		var newQuantity = res[0].stock - quantity;
+       		 		connection.query("UPDATE products SET stock = " + newQuantity + "WHERE id = " + purchaseItems, function(err, res){
+       		 			if (err) throw err;
+       		 			console.log("Drink responsibly.", err);
+       		 		})
 
-//        		 		inquirer.prompt([
-//        		 		  {
-//        		 		  	name: "choice",
-//        		 		  	type: "list",
-//        		 		  	message: "Would you like to check out?",
-//        		 		  	choices: ["Yes", "No"]
+       		 		inquirer.prompt([
+       		 		  {
+                  type: "list",
+                  message: "Would you like to check out?",
+                  choices: ["Yes", "No"],
+       		 		  	name: "choice"
 
-//        		 		  }
+       		 		  }
 
-//        		 		]).then(function(answer){
-//        		 			if (err) throw err;
+       		 		]).then(function(answer){
+       		 			if (err) throw err;
 
-//        		 			switch(answer.choice){
-//        		 				case "Yes":
-//        		 				start();
-//        		 				break;
+       		 			switch(answer.choice){
+       		 				case "Yes":
+       		 				start();
+       		 				break;
 
-//        		 				case "No":
-//        		 				txt()
-//        		 				connection.end();
-//        		 				break;
+       		 				// case "No":
+       		 				// txt()
+       		 				// // connection.end();
+       		 				// break;
 
-//        		 				default:
-//        		 				console.log("invalid");
-//        		 			}
-//        		 		})
-//        		 	}
-//        		 })
+       		 				default:
+       		 				console.log("invalid");
+       		 			}
+       		 		})
+       		 	}
+       		 })
  	   
    
    
  	    
-// 	});
+	});
 
-//   });
+  });
 
-// };
+};
 
 // function txt(){
 //     fs.readFile("txt.txt", "utf8", function(error, data) {
